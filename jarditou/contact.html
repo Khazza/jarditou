@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jarditou - Page Contact</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- start nav top-->
+    <nav>
+      <div class="navbar">
+        <ul class="ultop">
+          <li id="indexId">
+            <a href="index.html">Acceuil</a>
+          </li>
+          <li><a href="tableau.html">Tableau</a></li>
+          <li>
+            <a href="contact.html" title="Acceuil active" class="active"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- end nav top -->
+
+    <section class="complete">
+      <!-- start header -->
+      <header>
+        <div class="tete">
+          <img
+            class="logo"
+            src="src/img/jarditou_logo-removebg.png"
+            alt="logo_jarditou"
+            title="Logo Jarditou"
+          />
+          <div class="slogan">
+            <p>Tout le jardin</p>
+          </div>
+        </div>
+      </header>
+      <!-- end header -->
+
+      <!-- promotion -->
+      <div class="imgpromo">
+        <img
+          class="img1"
+          src="src/img/promotion.jpg"
+          alt="promotion"
+          title="promotion"
+        />
+      </div>
+      <!-- end promotion -->
+      
+      <section class="withColumn">
+        <div class="global">
+          <heading>
+            <div class="heading1">
+              <h1>Contact</h1>
+              <hr />
+            </div>
+
+            <!-- start form -->
+            <article>
+              <form
+                action="contact.php"
+                method="get"
+                id="formulaire_contact"
+                enctype="multipart/form-data"
+              >
+                <div>* Ces zones sont obligatoires</div>
+                <br />
+                <fieldset>
+                  <legend>Vos coordonnées</legend>
+                  <label for="nom">Nom *:</label
+                  ><input
+                    type="text"
+                    name="nom"
+                    id="nom"
+                    required
+                    title="requis"
+                  /><br />
+                  <label for="prenom">Prénom *:</label
+                  ><input
+                    type="text"
+                    name="prenom"
+                    id="prenom"
+                    required
+                    title="requis"
+                  /><br /><br />
+                  <label for="genre">Sexe *:</label><br />
+                  <input
+                    type="radio"
+                    name="genre"
+                    value="feminin"
+                    required
+                    title="requis"
+                  />
+                  Féminin
+                  <input
+                    type="radio"
+                    name="genre"
+                    value="masculin"
+                    required
+                    title="requis"
+                  />
+                  Masculin<br /><br />
+                  <label for="date">Date de naissance *:</label
+                  ><input
+                    type="date"
+                    name="ddn"
+                    id="date"
+                    required
+                    title="requis"
+                  /><br />
+                  <label for="cp">Code postal *:</label
+                  ><input
+                    type="text"
+                    name="cp"
+                    id="cp"
+                    required
+                    title="requis"
+                  /><br />
+                  <label for="adresse">Adresse :</label
+                  ><input type="text" name="adresse" id="adresse" /><br />
+                  <label for="ville">Ville :</label
+                  ><input type="text" name="ville" id="ville" /><br />
+                  <label for="email">Email *:</label
+                  ><input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="dave.loper@afpa.fr"
+                    required
+                    title="requis"
+                  /><br />
+                </fieldset>
+                <fieldset>
+                  <legend>Votre demande</legend>
+                  <label for="sujet">Sujet *:</label>
+                  <select name="sujet" id="sujet" required>
+                    <option value="">Veuillez sélectionner un sujet</option>
+                    <option value="mescommandes">Mes commandes</option>
+                    <option value="question">Question sur un produit</option>
+                    <option value="reclamation">Réclamation</option>
+                    <option value="autres">Autres</option></select
+                  ><br />
+
+                  <label for="commentaire"> Votre question *: </label
+                  ><textarea
+                    name="commentaire"
+                    rows="2"
+                    cols="20"
+                    required
+                    title="requis"
+                  ></textarea>
+                </fieldset>
+                <br />
+
+                <input
+                  type="checkbox"
+                  name="validation"
+                  value="validation"
+                  required
+                  title="requis"
+                />* J'accepte le traitement informatique de ce formulaire<br /><br />
+                <div class="controls">
+                  <input type="submit" value="Envoyer" />
+                  <input type="reset" value="Annuler" />
+                </div>
+              </form>
+              <!-- end form -->
+            </article>
+          </heading>
+        </div>
+        <!-- start grey column -->
+        <div class="column"></div>
+        <!-- end column -->
+      </section>
+      <br />
+    </section>
+
+    <!-- start footer -->
+    <section class="endpage">
+      <div class="socialmedia">
+        <a href="https://fb.com/" class="fa fa-facebook">Facebook</a>
+        <a href="https://instagram.com" class="fa fa-instagram">Instagram</a>
+        <a href="https://twitter.com" class="fa fa-twitter">Twitter</a>
+        <a href="https://youtube.com" class="fa fa-youtube">Youtube</a>
+      </div>
+      <footer>
+        <ul class="ulbot">
+          <li><a href="#">Mentions Légales</a></li>
+          <li><a href="#">Horaires</a></li>
+          <li><a href="#">Plan du site</a></li>
+        </ul>
+      </footer>
+    </section>
+    <!-- start footer -->
+  </body>
+</html>
