@@ -62,7 +62,7 @@
 // alert(tab);
 
 //--------------- EXERCICE 4 - TOTAL D'UNE COMMANDE ---------------
-// ------------------------------------------------------------------------------------------
+// -------------------------ESSAI N°1 PAS CONCLUANT MAIS FONCTIONNEL-------------------------
 // let PU = prompt("Saisir le prix unitaire");
 // let QTECOM = prompt("Saisir la quantité commandée");
 // let TOT = PU * QTECOM;
@@ -91,7 +91,7 @@
 // PAP = TOT + PORT;
 // console.log("Prix à payer : " + PAP + "€ (Remise : " + REM + "€, Port : " + PORT + "€)"); 
 // ------------------------------------------------------------------------------------------
-
+// -------------------------ESSAI N°2 FONCTIONNEL ET PRIX ARRONDI A 0.01---------------------
 // let PU = prompt("Saisir le prix unitaire");
 // let QTECOM = prompt("Saisir la quantité commandée");
 
