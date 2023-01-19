@@ -80,23 +80,19 @@
                     type="text"
                     name="nom"
                     id="nom"
-                    required
                     title="requis"
                   /><br />
                   <label for="prenom">Prénom *:</label
                   ><input
                     type="text"
                     name="prenom"
-                    id="prenom"
-                    required
-                    title="requis"
+                    id="prenom"                    title="requis"
                   /><br /><br />
                   <label for="genre">Sexe *:</label><br />
                   <input
                     type="radio"
                     name="genre"
                     value="feminin"
-                    required
                     title="requis"
                   />
                   Féminin
@@ -104,7 +100,6 @@
                     type="radio"
                     name="genre"
                     value="masculin"
-                    required
                     title="requis"
                   />
                   Masculin<br /><br />
@@ -113,7 +108,6 @@
                     type="date"
                     name="ddn"
                     id="date"
-                    required
                     title="requis"
                   /><br />
                   <label for="cp">Code postal *:</label
@@ -121,7 +115,6 @@
                     type="text"
                     name="cp"
                     id="cp"
-                    required
                     title="requis"
                   /><br />
                   <label for="adresse">Adresse :</label
@@ -134,14 +127,13 @@
                     name="email"
                     id="email"
                     placeholder="dave.loper@afpa.fr"
-                    required
                     title="requis"
                   /><br />
                 </fieldset>
                 <fieldset>
                   <legend>Votre demande</legend>
                   <label for="sujet">Sujet *:</label>
-                  <select name="sujet" id="sujet" required>
+                  <select name="sujet" id="sujet">
                     <option value="">Veuillez sélectionner un sujet</option>
                     <option value="mescommandes">Mes commandes</option>
                     <option value="question">Question sur un produit</option>
@@ -154,7 +146,6 @@
                     name="commentaire"
                     rows="2"
                     cols="20"
-                    required
                     title="requis"
                   ></textarea>
                 </fieldset>
@@ -164,7 +155,6 @@
                   type="checkbox"
                   name="validation"
                   value="validation"
-                  required
                   title="requis"
                 />* J'accepte le traitement informatique de ce formulaire<br /><br />
                 <div class="controls">

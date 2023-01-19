@@ -26,7 +26,7 @@
 // function displayMultiplicationTable() {
 //   let num = prompt(
 //     "Entrez un nombre pour afficher sa table de multiplication:"
-//   ); 
+//   );
 //   let range = prompt("Entrez jusqu'a quel multiple:");
 //   for (let i = 1; i <= range; i++) {
 //     console.log(`${i} x ${num} = ${i * num}`);
@@ -89,7 +89,7 @@
 // }
 
 // PAP = TOT + PORT;
-// console.log("Prix à payer : " + PAP + "€ (Remise : " + REM + "€, Port : " + PORT + "€)"); 
+// console.log("Prix à payer : " + PAP + "€ (Remise : " + REM + "€, Port : " + PORT + "€)");
 // ------------------------------------------------------------------------------------------
 // -------------------------ESSAI N°2 FONCTIONNEL ET PRIX ARRONDI A 0.01---------------------
 // let PU = prompt("Saisir le prix unitaire");
@@ -127,5 +127,33 @@
 // console.log("Frais de port: " + PORT + "€"); // afficher les frais de port
 // console.log("Prix à payer: " + PAP + "€"); // afficher le prix à payer
 
-
 //--------------- EXERCICE 5 - verification d'un formulaire ---------------
+const form = document.getElementById("formulaire_contact");
+
+// Détecter l'événement d'envoi
+form.addEventListener("submit", function (e) {
+  // variable error pour vérifier s'il y a des champs vides
+  let error = false;
+
+  // Récupération de tous les champs
+  let inputs = form.getElementsByTagName("input");
+
+  // Boucle pour vérifier si les champs sont vides
+  for (let i = 0; i < inputs.length; i++) {
+    if (inputs[i].value === "") {
+      // Ajout de bordure rouge pour indiquer une erreur
+      inputs[i].style.borderColor = "red";
+
+      // Changement de la valeur de error à true pour indiquer une erreur
+      error = true;
+    } else {
+      // enlever la bordure rouge si le champ est rempli
+      inputs[i].style.borderColor = "";
+    }
+  }
+
+  // Empêcher l'envoi du formulaire en cas d'erreur
+  if (error) {
+    e.preventDefault();
+  }
+});
