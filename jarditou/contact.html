@@ -54,7 +54,7 @@
         />
       </div>
       <!-- end promotion -->
-      
+
       <section class="withColumn">
         <div class="global">
           <heading>
@@ -80,19 +80,23 @@
                     type="text"
                     name="nom"
                     id="nom"
+                    required
                     title="requis"
                   /><br />
                   <label for="prenom">Prénom *:</label
                   ><input
                     type="text"
                     name="prenom"
-                    id="prenom"                    title="requis"
+                    id="prenom"
+                    required
+                    title="requis"
                   /><br /><br />
                   <label for="genre">Sexe *:</label><br />
                   <input
                     type="radio"
                     name="genre"
                     value="feminin"
+                    required
                     title="requis"
                   />
                   Féminin
@@ -100,6 +104,7 @@
                     type="radio"
                     name="genre"
                     value="masculin"
+                    required
                     title="requis"
                   />
                   Masculin<br /><br />
@@ -111,12 +116,7 @@
                     title="requis"
                   /><br />
                   <label for="cp">Code postal *:</label
-                  ><input
-                    type="text"
-                    name="cp"
-                    id="cp"
-                    title="requis"
-                  /><br />
+                  ><input type="text" name="cp" id="cp" title="requis" /><br />
                   <label for="adresse">Adresse :</label
                   ><input type="text" name="adresse" id="adresse" /><br />
                   <label for="ville">Ville :</label
@@ -127,13 +127,14 @@
                     name="email"
                     id="email"
                     placeholder="dave.loper@afpa.fr"
+                    required
                     title="requis"
                   /><br />
                 </fieldset>
                 <fieldset>
                   <legend>Votre demande</legend>
                   <label for="sujet">Sujet *:</label>
-                  <select name="sujet" id="sujet">
+                  <select name="sujet" id="sujet" required>
                     <option value="">Veuillez sélectionner un sujet</option>
                     <option value="mescommandes">Mes commandes</option>
                     <option value="question">Question sur un produit</option>
@@ -146,6 +147,7 @@
                     name="commentaire"
                     rows="2"
                     cols="20"
+                    required
                     title="requis"
                   ></textarea>
                 </fieldset>
@@ -155,6 +157,7 @@
                   type="checkbox"
                   name="validation"
                   value="validation"
+                  required
                   title="requis"
                 />* J'accepte le traitement informatique de ce formulaire<br /><br />
                 <div class="controls">
@@ -191,6 +194,6 @@
     </section>
     <!-- start footer -->
 
-    <script src="jarditou/js/evaluation.js"></script>
+    <script src="js/evaluation.js"></script>
   </body>
 </html>

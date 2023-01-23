@@ -132,6 +132,7 @@ const form = document.getElementById("formulaire_contact");
 
 // Détecter l'événement d'envoi
 form.addEventListener("submit", function (e) {
+  e.preventDefault();
   // variable error pour vérifier s'il y a des champs vides
   let error = false;
 
