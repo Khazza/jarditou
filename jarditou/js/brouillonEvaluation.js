@@ -1,3 +1,9 @@
+// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
+// --------- POUR LES EXERCICES 1 A 4 UTILISATION POSSIBLE DE LA PAGE HTML VIDE "indexVidePourExo.html"
+// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
+
 // --------------- EXERCICE 1 - CALCUL DU NOMBRE DE JEUNES, DE MOYENS ET DE VIEUX ---------------
 // let under20 = 0; //initialiser le total de personne sous 20 ans à 0
 // let between20and40 = 0; //initialiser le total de personne entre 20 et 40 ans à 0
@@ -18,9 +24,15 @@
 //     }
 // }
 
-// console.log(`Il y a ${under20} personnes d'âge inférieur à 20 ans.`);
-// console.log(`Il y a ${between20and40} personnes d'âge compris entre 20 et 40 ans.`);
-// console.log(`Il y a ${over40} personnes d'âge supérieur à 40 ans.`);
+// // console.log(`Il y a ${under20} personnes d'âge inférieur à 20 ans.`);
+// // console.log(`Il y a ${between20and40} personnes d'âge compris entre 20 et 40 ans.`);
+// // console.log(`Il y a ${over40} personnes d'âge supérieur à 40 ans.`);
+// // document.write(`Il y a ${under20} personnes d'âge inférieur à 20 ans.`);
+// // document.write(`Il y a ${between20and40} personnes d'âge compris entre 20 et 40 ans.`);
+// // document.write(`Il y a ${over40} personnes d'âge supérieur à 40 ans.`);
+// document.write(`<p style="font-size: 20px;"> Il y a ${under20} personnes d'âge inférieur à 20 ans.</p><br>`);
+// document.write(`<p style="font-size: 20px;"> Il y a ${between20and40} personnes d'âge compris entre 20 et 40 ans.</p><br>`);
+// document.write(`<p style="font-size: 20px;"> Il y a ${over40} personnes d'âge supérieur à 40 ans.</p><br>`);
 
 
 // ----------------------------------------------------------------------
@@ -31,15 +43,22 @@
 
 //--------------- EXERCICE 2 - TABLE DE MULTIPLICATION  ---------------
 // function displayMultiplicationTable() {
-//   let num = prompt(
-//     "Entrez un nombre pour afficher sa table de multiplication:"
-//   );
-//   let range = prompt("Entrez jusqu'a quel multiple:");
-//   for (let i = 1; i <= range; i++) {
-//     console.log(`${i} x ${num} = ${i * num}`);
+//     //Demande à l'utilisateur de saisir un nombre
+//     let num = prompt("Entrez un nombre pour afficher sa table de multiplication:");
+//     //Demande à l'utilisateur de saisir jusqu'à quel multiple
+//     let range = prompt("Entrez jusqu'a quel multiple:");
+//     //Initialisation de la variable pour stocker les résultats
+//     let output = "";
+//     // Boucle qui parcours les multiples
+//     for (let i = 1; i <= range; i++) {
+//       //Ajout de chaque résultat à la variable output
+//       output += `${i} x ${num} = ${i * num}<br>`;
+//     }
+//     //affichage des résultats dans l'élément HTML avec l'id "result"
+//     document.getElementById("result").innerHTML = output;
 //   }
-// }
-// displayMultiplicationTable(); //Affichage de la table
+//   //Appel de la fonction pour lancer le script
+//   displayMultiplicationTable();
 
 
 // ----------------------------------------------------------------------
@@ -93,30 +112,36 @@
 // console.log(tab);
 
 // -------------------------ESSAI N°3
+// // Déclaration du tableau
 // var tab = ["Audrey", "Aurélien", "Flavien", "Jérémy", "Laurent", "Melik", "Nouara", "Salem", "Samuel", "Stéphane"];
-// console.log(tab);
+
+// // Afficher le tableau initial sur la page
+// document.getElementById("tableau-initial").innerHTML = "<h3>Tableau initial: </h3><ul>" + tab.map(prenom => "<li>" + prenom + "</li>").join("") + "</ul>";
+
 // // Boucle pour demander un prénom à supprimer
 // while (true) {
-//    // Demander à l'utilisateur d'entrer un prénom
-//   var prenom = prompt("Entrez un prénom à supprimer:").toLowerCase();
-//    // Trouver l'index du prénom dans le tableau en utilisant la fonction map
-//   var index = tab.map(function(e) { return e.toLowerCase(); }).indexOf(prenom);
-  
-//   // Si le prénom n'a pas été trouvé
-//   if (index === -1) {
-//     alert("Ce prénom n'a pas été trouvé dans le tableau.");
-//   } else {
-//     // Supprimer le prénom en utilisant splice
-//     tab.splice(index, 1);
-//     alert("Le prénom a été supprimé avec succès.");
-//   }
-//   // Si le tableau est vide, relancer la boucle
-//      if(tab.length===0) {
-//         alert("Tableau est vide");
+//     // Demander à l'utilisateur d'entrer un prénom
+//     var prenom = prompt("Entrez un prénom à supprimer:");
+//     // Si l'utilisateur appuie sur annuler (null) on sort de la boucle
+//     if(prenom == null){
+//         break;
+//     }
+//     // Mettre tous les prénoms en minuscule
+//     prenom = prenom.toLowerCase();
+//     // Trouver la place du prénom dans le tableau en utilisant la fonction map pour mettre tous les prénoms en minuscule
+//     var index = tab.map(function(e) { return e.toLowerCase(); }).indexOf(prenom);
+
+//     // Si le prénom n'a pas été trouvé
+//     if (index === -1) {
+//         alert("Ce prénom n'a pas été trouvé dans le tableau.");
+//     } else {
+//         // Supprimer le prénom en utilisant splice
+//         tab.splice(index, 1);
+//         // Afficher le nouveau tableau sur la page
+//         document.getElementById("nouveau-tableau").innerHTML = "<h3>Nouveau tableau: </h3><ul>" + tab.map(prenom => "<li>" + prenom + "</li>").join("") + "</ul>";
 //         break;
 //     }
 // }
-// console.log(tab);
 
 // ----------------------------------------------------------------------
 // ----------------------------------------------------------------------
@@ -185,9 +210,9 @@
 // PORT = Math.round(PORT * 100) / 100; // arrondir le prix frais de port à 0.01 près
 // PAP = Math.round(PAP * 100) / 100;// arrondir le prix à payer à 0.01 près
 
-// console.log("Remise: " + REM + "€"); // afficher la remise
-// console.log("Frais de port: " + PORT + "€"); // afficher les frais de port
-// console.log("Prix à payer: " + PAP + "€"); // afficher le prix à payer
+// document.write("Remise: " + REM + "€" + "<br>"); // afficher la remise
+// document.write("Frais de port: " + PORT + "€" + "<br>"); // afficher les frais de port
+// document.write("Prix à payer: " + PAP + "€" + "<br>"); // afficher le prix à payer
 
 
 // ----------------------------------------------------------------------
@@ -196,33 +221,33 @@
 
 
 //--------------- EXERCICE 5 - verification d'un formulaire ---------------
-// const form = document.getElementById("formulaire_contact");
+const form = document.getElementById("formulaire_contact");
 
-// // Détecter l'événement d'envoi
-// form.addEventListener("submit", function (e) {
-//   e.preventDefault();
-//   // variable error pour vérifier s'il y a des champs vides
-//   let error = false;
+// Détecter l'événement d'envoi
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  // variable error pour vérifier s'il y a des champs vides
+  let error = false;
 
-//   // Récupération de tous les champs
-//   let inputs = form.getElementsByTagName("input");
+  // Récupération de tous les champs
+  let inputs = form.getElementsByTagName("input");
 
-//   // Boucle pour vérifier si les champs sont vides
-//   for (let i = 0; i < inputs.length; i++) {
-//     if (inputs[i].value === "") {
-//       // Ajout de bordure rouge pour indiquer une erreur
-//       inputs[i].style.borderColor = "red";
+  // Boucle pour vérifier si les champs sont vides
+  for (let i = 0; i < inputs.length; i++) {
+    if (inputs[i].value === "") {
+      // Ajout de bordure rouge pour indiquer une erreur
+      inputs[i].style.borderColor = "red";
 
-//       // Changement de la valeur de error à true pour indiquer une erreur
-//       error = true;
-//     } else {
-//       // enlever la bordure rouge si le champ est rempli
-//       inputs[i].style.borderColor = "";
-//     }
-//   }
+      // Changement de la valeur de error à true pour indiquer une erreur
+      error = true;
+    } else {
+      // enlever la bordure rouge si le champ est rempli
+      inputs[i].style.borderColor = "";
+    }
+  }
 
-//   // Empêcher l'envoi du formulaire en cas d'erreur
-//   if (error) {
-//     e.preventDefault();
-//   }
-// });
+  // Empêcher l'envoi du formulaire en cas d'erreur
+  if (error) {
+    e.preventDefault();
+  }
+});

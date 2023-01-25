@@ -71,84 +71,106 @@
                 id="formulaire_contact"
                 enctype="multipart/form-data"
               >
-                <div>* Ces zones sont obligatoires</div>
+                <label>* Ces zones sont obligatoires</label>
                 <br />
                 <fieldset>
                   <legend>Vos coordonnées</legend>
-                  <label for="nom">Nom *:</label
-                  ><input
+                  <label for="nom">Nom *:</label>
+                  <input
                     type="text"
                     name="nom"
                     id="nom"
-                    
-                    title="requis"
+                    required
+                    title="Ce champ est obligatoire"
                   /><br />
-                  <label for="prenom">Prénom *:</label
-                  ><input
+                  <label for="prenom">Prénom *:</label>
+                  <input
                     type="text"
                     name="prenom"
                     id="prenom"
-                    
-                    title="requis"
+                    required
+                    title="Ce champ est obligatoire"
                   /><br /><br />
                   <label for="genre">Sexe *:</label><br />
                   <input
                     type="radio"
                     name="genre"
                     value="feminin"
-                  
-                    title="requis"
+                    required
+                    title="Ce champ est obligatoire"
                   />
                   Féminin
                   <input
                     type="radio"
                     name="genre"
                     value="masculin"
-                    
-                    title="requis"
+                    required
+                    title="Ce champ est obligatoire"
                   />
                   Masculin<br /><br />
-                  <label for="date">Date de naissance *:</label
-                  ><input
+                  <label for="date">Date de naissance *:</label>
+                  <input
                     type="date"
                     name="ddn"
                     id="date"
-                    title="requis"
+                    required
+                    title="Ce champ est obligatoire"
                   /><br />
-                  <label for="cp">Code postal *:</label
-                  ><input type="text" name="cp" id="cp" title="requis" /><br />
-                  <label for="adresse">Adresse :</label
-                  ><input type="text" name="adresse" id="adresse" title="requis"/><br />
-                  <label for="ville">Ville :</label
-                  ><input type="text" name="ville" id="ville" title="requis"/><br />
-                  <label for="email">Email *:</label
-                  ><input
+                  <label for="cp">Code postal *:</label>
+                  <input
+                    type="text"
+                    name="cp"
+                    id="cp"
+                    required
+                    title="Ce champ est obligatoire"
+                  /><br />
+                  <label for="adresse">Adresse *:</label>
+                  <input
+                    type="text"
+                    name="adresse"
+                    id="adresse"
+                    required
+                    title="Ce champ est obligatoire"
+                  /><br />
+                  <label for="ville">Ville *:</label>
+                  <input
+                    type="text"
+                    name="ville"
+                    id="ville"
+                    required
+                    title="Ce champ est obligatoire"
+                  /><br />
+                  <label for="email">Email *:</label>
+                  <input
                     type="email"
                     name="email"
                     id="email"
                     placeholder="Votre email"
-                    
-                    title="requis"
+                    required
+                    title="Ce champ est obligatoire"
                   /><br />
                 </fieldset>
                 <fieldset>
                   <legend>Votre demande</legend>
                   <label for="sujet">Sujet *:</label>
-                  <select name="sujet" id="sujet" >
-                    <option value="">Veuillez sélectionner un sujet</option>
+                  <select name="sujet" id="sujet" required>
+                    <option value="" disabled selected>
+                      Veuillez sélectionner un sujet
+                    </option>
                     <option value="mescommandes">Mes commandes</option>
                     <option value="question">Question sur un produit</option>
                     <option value="reclamation">Réclamation</option>
-                    <option value="autres">Autres</option></select
-                  ><br />
+                    <option value="autres">Autres</option>
+                  </select>
+                  <br />
 
-                  <label for="commentaire"> Votre question *: </label
-                  ><textarea
+                  <label for="commentaire"> Votre question *: </label>
+                  <textarea
                     name="commentaire"
                     rows="2"
                     cols="20"
-                    
-                    title="requis"
+                    required
+                    title="Ce champ est obligatoire"
                   ></textarea>
                 </fieldset>
                 <br />
@@ -157,8 +179,8 @@
                   type="checkbox"
                   name="validation"
                   value="validation"
-                  
-                  title="requis"
+                  required
+                  title="Ce champ est obligatoire"
                 />* J'accepte le traitement informatique de ce formulaire<br /><br />
                 <div class="controls">
                   <input type="submit" value="Envoyer" />
@@ -194,6 +216,6 @@
     </section>
     <!-- start footer -->
 
-    <script src="js/evaluation.js"></script>
+    <script src="./js/brouillonEvaluation.js"></script>
   </body>
 </html>
