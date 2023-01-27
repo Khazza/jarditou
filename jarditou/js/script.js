@@ -19,20 +19,50 @@ form.addEventListener("submit", function(e) {
   let formValid = true;
 
   // Vérification de la saisie du nom
-  if (nom.value.trim() === "") {
-    formValid = false;
-    nom.style.borderColor = "red";
-  } else {
-    nom.style.borderColor = "green";
+if (nom.value.trim() === "") {
+  formValid = false;
+  nom.style.borderColor = "red";
+  // Vérification de l'existence du message d'erreur
+  let errorMessage = nom.nextElementSibling;
+  if(errorMessage === null || errorMessage.tagName !== "DIV") {
+      // Création du message d'erreur
+      errorMessage = document.createElement("div");
+      errorMessage.innerHTML = "Le champ nom est requis";
+      errorMessage.style.color = "red";
+      // Insertion du message d'erreur après le champ
+      nom.insertAdjacentElement("afterend", errorMessage);
   }
+} else {
+  nom.style.borderColor = "green";
+  // Vérification de l'existence du message d'erreur
+  let errorMessage = nom.nextElementSibling;
+  if(errorMessage !== null && errorMessage.tagName === "DIV") {
+      errorMessage.remove();
+  }
+}
 
   // Vérification de la saisie du prénom
-  if (prenom.value.trim() === "") {
-    formValid = false;
-    prenom.style.borderColor = "red";
-  } else {
-    prenom.style.borderColor = "green";
+if (prenom.value.trim() === "") {
+  formValid = false;
+  prenom.style.borderColor = "red";
+  // Vérification de l'existence du message d'erreur
+  let errorMessage = prenom.nextElementSibling;
+  if(errorMessage === null || errorMessage.tagName !== "DIV") {
+      // Création du message d'erreur
+      errorMessage = document.createElement("div");
+      errorMessage.innerHTML = "Le champ prenom est requis";
+      errorMessage.style.color = "red";
+      // Insertion du message d'erreur après le champ
+      prenom.insertAdjacentElement("afterend", errorMessage);
   }
+} else {
+  prenom.style.borderColor = "green";
+  // Vérification de l'existence du message d'erreur
+  let errorMessage = prenom.nextElementSibling;
+  if(errorMessage !== null && errorMessage.tagName === "DIV") {
+      errorMessage.remove();
+  }
+}
 
   // Vérification de la saisie du genre
   let genreChecked = false;
@@ -53,52 +83,97 @@ form.addEventListener("submit", function(e) {
     }
   }
 
-  // Vérification de la saisie de la date
+  // Vérification de la saisie du date
   if (date.value.trim() === "") {
     formValid = false;
     date.style.borderColor = "red";
+    // Vérification de l'existence du message d'erreur
+    let errorMessage = date.nextElementSibling;
+    if(errorMessage === null || errorMessage.tagName !== "DIV") {
+        // Création du message d'erreur
+        errorMessage = document.createElement("div");
+        errorMessage.innerHTML = "Veuillez choisir date de naissance";
+        errorMessage.style.color = "red";
+        // Insertion du message d'erreur après le champ
+        date.insertAdjacentElement("afterend", errorMessage);
+    }
   } else {
     date.style.borderColor = "green";
+    // Vérification de l'existence du message d'erreur
+    let errorMessage = date.nextElementSibling;
+    if(errorMessage !== null && errorMessage.tagName === "DIV") {
+        errorMessage.remove();
+    }
   }
 
-// Vérification de la saisie du code postal
+   // Vérification de la saisie du code postal
 if (cp.value.trim() === "") {
   formValid = false;
   cp.style.borderColor = "red";
+  // Vérification de l'existence du message d'erreur
+  let errorMessage = cp.nextElementSibling;
+  if(errorMessage === null || errorMessage.tagName !== "DIV") {
+      // Création du message d'erreur
+      errorMessage = document.createElement("div");
+      errorMessage.innerHTML = "Le champ code postal est requis";
+      errorMessage.style.color = "red";
+      // Insertion du message d'erreur après le champ
+      cp.insertAdjacentElement("afterend", errorMessage);
+  }
 } else {
-  // Vérification de la longueur du code postal
-  var cpValue = cp.value.trim();
-  if (cpValue.length < 5) {
-      formValid = false;
-      cp.style.borderColor = "red";
-      alert("Le code postal doit contenir au moins 5 caractères");
-  } else {
-      var codePostalRegex = new RegExp("^[0-9]+$");
-      if(!codePostalRegex.test(cpValue)) {
-          formValid = false;
-          cp.style.borderColor = "red";
-          alert("Le code postal doit contenir uniquement des chiffres");
-      } else {
-          cp.style.borderColor = "green";
-      }
+  cp.style.borderColor = "green";
+  // Vérification de l'existence du message d'erreur
+  let errorMessage = cp.nextElementSibling;
+  if(errorMessage !== null && errorMessage.tagName === "DIV") {
+      errorMessage.remove();
   }
 }
 
-  // Vérification de la saisie de l'adresse
+  // Vérification de la saisie du adresse
   if (adresse.value.trim() === "") {
     formValid = false;
     adresse.style.borderColor = "red";
-} else {
-adresse.style.borderColor = "green";
-}
+    // Vérification de l'existence du message d'erreur
+    let errorMessage = adresse.nextElementSibling;
+    if(errorMessage === null || errorMessage.tagName !== "DIV") {
+        // Création du message d'erreur
+        errorMessage = document.createElement("div");
+        errorMessage.innerHTML = "Le champ adresse est requis";
+        errorMessage.style.color = "red";
+        // Insertion du message d'erreur après le champ
+        adresse.insertAdjacentElement("afterend", errorMessage);
+    }
+  } else {
+    adresse.style.borderColor = "green";
+    // Vérification de l'existence du message d'erreur
+    let errorMessage = adresse.nextElementSibling;
+    if(errorMessage !== null && errorMessage.tagName === "DIV") {
+        errorMessage.remove();
+    }
+  }
 
-// Vérification de la saisie de la ville
-if (ville.value.trim() === "") {
-formValid = false;
-ville.style.borderColor = "red";
-} else {
-ville.style.borderColor = "green";
-}
+  // Vérification de la saisie du ville
+  if (ville.value.trim() === "") {
+    formValid = false;
+    ville.style.borderColor = "red";
+    // Vérification de l'existence du message d'erreur
+    let errorMessage = ville.nextElementSibling;
+    if(errorMessage === null || errorMessage.tagName !== "DIV") {
+        // Création du message d'erreur
+        errorMessage = document.createElement("div");
+        errorMessage.innerHTML = "Le champ ville est requis";
+        errorMessage.style.color = "red";
+        // Insertion du message d'erreur après le champ
+        ville.insertAdjacentElement("afterend", errorMessage);
+    }
+  } else {
+    ville.style.borderColor = "green";
+    // Vérification de l'existence du message d'erreur
+    let errorMessage = ville.nextElementSibling;
+    if(errorMessage !== null && errorMessage.tagName === "DIV") {
+        errorMessage.remove();
+    }
+  }
 
 // Vérification de la saisie de l'email
 if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/.test(email.value)) {
@@ -108,13 +183,28 @@ email.style.borderColor = "red";
 email.style.borderColor = "green";
 }
 
-// Vérification de la saisie du sujet
-if (sujet.value.trim() === "") {
-formValid = false;
-sujet.style.borderColor = "red";
-} else {
-sujet.style.borderColor = "green";
-}
+  // Vérification de la saisie du sujet
+  if (sujet.value.trim() === "") {
+    formValid = false;
+    sujet.style.borderColor = "red";
+    // Vérification de l'existence du message d'erreur
+    let errorMessage = sujet.nextElementSibling;
+    if(errorMessage === null || errorMessage.tagName !== "DIV") {
+        // Création du message d'erreur
+        errorMessage = document.createElement("div");
+        errorMessage.innerHTML = "Veuillez choisir un sujet";
+        errorMessage.style.color = "red";
+        // Insertion du message d'erreur après le champ
+        sujet.insertAdjacentElement("afterend", errorMessage);
+    }
+  } else {
+    sujet.style.borderColor = "green";
+    // Vérification de l'existence du message d'erreur
+    let errorMessage = sujet.nextElementSibling;
+    if(errorMessage !== null && errorMessage.tagName === "DIV") {
+        errorMessage.remove();
+    }
+  }
 
 // Vérification de la saisie du commentaire
 if (commentaire.value.trim() === "") {
@@ -138,3 +228,4 @@ e.preventDefault();
 // alert("Veuillez remplir correctement tous les champs du formulaire.");
 }
 });
+
