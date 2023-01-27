@@ -3,13 +3,13 @@
 function calculerPrix(pu, qteCom) {
   // Calculer le total en multipliant le prix unitaire par la quantité commandée
   let tot = pu * qteCom;
-  
-  // Initialiser la remise à 0
+
+  // Initialiser la remise à 0```
   let rem = 0;
-  
+
   // Initialiser les frais de port à 0
   let port = 0;
-  
+
   // Calculer la remise en fonction du total
   if (tot > 200) {
     rem = tot * 0.1;
@@ -38,15 +38,18 @@ function calculerPrix(pu, qteCom) {
 
   // Retourner les résultats sous forme d'un objet
   return {
-    "pu": pu,
-    "qteCom": qteCom,
-    "remise": rem,
-    "fraisPort": port,
-    "pap": pap
+    pu: pu,
+    qteCom: qteCom,
+    remise: rem,
+    fraisPort: port,
+    pap: pap,
   };
 }
 
-let prix = calculerPrix(prompt("Saisir le prix unitaire"), prompt("Saisir la quantité commandée"));
+let prix = calculerPrix(
+  prompt("Saisir le prix unitaire"),
+  prompt("Saisir la quantité commandée")
+);
 document.write("Prix unitaire: " + prix.pu + "€" + "<br>");
 document.write("Quantité commandée: " + prix.qteCom + "<br>");
 document.write("Remise: " + prix.remise + "€" + "<br>");

@@ -3,42 +3,47 @@
 // ------------------------------------------------------------------------------------------
 // -------------------------ESSAI N°2 (en fonction)
 function calculateAgeCategories() {
-    // Initialisation des variables d'ages
-    let under20 = 0; 
-    let between20and40 = 0;
-    let over40 = 0;
+  // Initialisation des variables d'ages
+  let under20 = 0;
+  let between20and40 = 0;
+  let over40 = 0;
 
-    // Boucle infinie pour demander l'age
-    while (true) {
-        let age = parseInt(prompt("Entrez un âge (ou 100+ pour arrêter): "));
+  // Boucle infinie pour demander l'age
+  while (true) {
+    let age = parseInt(prompt("Entrez un âge (ou 100+ pour arrêter): "));
 
-        // Si l'âge entré est 100 on break mais on prend l'age en compte
-        if (age === 100) {
-            over40++;
-            break;
-        }
-        // Si l'âge est inférieur à 20, on incrémente la catégorie "moins de 20 ans"
-        if (age < 20) {
-            under20++;
-        } 
-        // Sinon, si l'âge est inférieur ou égal à 40, on incrémente la catégorie "entre 20 et 40 ans"
-        else if (age <= 40) {
-            between20and40++;
-        } 
-        // Sinon, on incrémente la catégorie "plus de 40 ans"
-        else {
-            over40++;
-        }
+    // Si l'âge entré est 100 on break mais on prend l'age en compte
+    if (age === 100) {
+      over40++;
+      break;
     }
+    // Si l'âge est inférieur à 20, on incrémente la catégorie "moins de 20 ans"
+    if (age < 20) {
+      under20++;
+    }
+    // Sinon, si l'âge est inférieur ou égal à 40, on incrémente la catégorie "entre 20 et 40 ans"
+    else if (age <= 40) {
+      between20and40++;
+    }
+    // Sinon, on incrémente la catégorie "plus de 40 ans"
+    else {
+      over40++;
+    }
+  }
 
-    // On retourne les résultats sous forme de trois variables
-    return { under20, between20and40, over40 };
+  // On retourne les résultats sous forme de trois variables
+  return { under20, between20and40, over40 };
 }
 const result = calculateAgeCategories();
-document.write(`<p style="font-size: 20px;"> Il y a ${result.under20} personnes d'âge inférieur à 20 ans.</p><br>`);
-document.write(`<p style="font-size: 20px;"> Il y a ${result.between20and40} personnes d'âge compris entre 20 et 40 ans.</p><br>`);
-document.write(`<p style="font-size: 20px;"> Il y a ${result.over40} personnes d'âge supérieur à 40 ans.</p><br>`);
-
+document.write(
+  `<p style="font-size: 20px;"> Il y a ${result.under20} personnes d'âge inférieur à 20 ans.</p><br>`
+);
+document.write(
+  `<p style="font-size: 20px;"> Il y a ${result.between20and40} personnes d'âge compris entre 20 et 40 ans.</p><br>`
+);
+document.write(
+  `<p style="font-size: 20px;"> Il y a ${result.over40} personnes d'âge supérieur à 40 ans.</p><br>`
+);
 
 // ----------------------------v-v-v-v-v-Anciens essais (plus bas)-v-v-v-v-v-----------------
 // ------------------------------------------------------------------------------------------
@@ -73,5 +78,3 @@ document.write(`<p style="font-size: 20px;"> Il y a ${result.over40} personnes d
 // document.write(`<p style="font-size: 20px;"> Il y a ${under20} personnes d'âge inférieur à 20 ans.</p><br>`);
 // document.write(`<p style="font-size: 20px;"> Il y a ${between20and40} personnes d'âge compris entre 20 et 40 ans.</p><br>`);
 // document.write(`<p style="font-size: 20px;"> Il y a ${over40} personnes d'âge supérieur à 40 ans.</p><br>`);
-
-
