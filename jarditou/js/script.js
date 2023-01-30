@@ -175,12 +175,27 @@ if (cp.value.trim() === "") {
     }
   }
 
-// Vérification de la saisie de l'email
+// Vérification de la saisie de l'email 
 if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/.test(email.value)) {
 formValid = false;
 email.style.borderColor = "red";
+// Vérification de l'existence du message d'erreur
+let errorMessage = email.nextElementSibling;
+if(errorMessage === null || errorMessage.tagName !== "DIV") {
+    // Création du message d'erreur
+    errorMessage = document.createElement("div");
+    errorMessage.innerHTML = "Veuillez entrer un email valide (Exemple: nom@domaine.com)";
+    errorMessage.style.color = "red";
+    // Insertion du message d'erreur après le champ
+    email.insertAdjacentElement("afterend", errorMessage);
+}
 } else {
 email.style.borderColor = "green";
+// Vérification de l'existence du message d'erreur
+let errorMessage = email.nextElementSibling;
+if(errorMessage !== null && errorMessage.tagName === "DIV") {
+    errorMessage.remove();
+}
 }
 
   // Vérification de la saisie du sujet
@@ -210,16 +225,47 @@ email.style.borderColor = "green";
 if (commentaire.value.trim() === "") {
 formValid = false;
 commentaire.style.borderColor = "red";
+// Vérification de l'existence du message d'erreur
+let errorMessage = commentaire.nextElementSibling;
+if(errorMessage === null || errorMessage.tagName !== "DIV") {
+    // Création du message d'erreur
+    errorMessage = document.createElement("div");
+    errorMessage.innerHTML = "Veuillez indiquer votre question ou commentaire";
+    errorMessage.style.color = "red";
+    // Insertion du message d'erreur après le champ
+    commentaire.insertAdjacentElement("afterend", errorMessage);
+}
 } else {
 commentaire.style.borderColor = "green";
+commentaire.style.borderColor = "green";
+// Vérification de l'existence du message d'erreur
+let errorMessage = commentaire.nextElementSibling;
+if(errorMessage !== null && errorMessage.tagName === "DIV") {
+    errorMessage.remove();
+}
 }
 
 // Vérification de la case de validation
 if (!validation.checked) {
 formValid = false;
 validation.parentElement.style.color = "red";
+// Vérification de l'existence du message d'erreur
+let errorMessage = validation.nextElementSibling;
+if(errorMessage === null || errorMessage.tagName !== "DIV") {
+    // Création du message d'erreur
+    errorMessage = document.createElement("div");
+    errorMessage.innerHTML = "Veuillez accepter les conditions afin de soumettre votre demande";
+    errorMessage.style.color = "red";
+    // Insertion du message d'erreur après le champ
+    validation.insertAdjacentElement("afterend", errorMessage);
+}
 } else {
 validation.parentElement.style.color = "green";
+// Vérification de l'existence du message d'erreur
+let errorMessage = validation.nextElementSibling;
+if(errorMessage !== null && errorMessage.tagName === "DIV") {
+    errorMessage.remove();
+}
 }
 
 // Si la variable formValid est false, on empêche l'envoi du formulaire
@@ -228,4 +274,3 @@ e.preventDefault();
 // alert("Veuillez remplir correctement tous les champs du formulaire.");
 }
 });
-

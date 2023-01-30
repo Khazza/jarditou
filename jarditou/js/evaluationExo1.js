@@ -2,7 +2,7 @@
 // ------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------
 // -------------------------ESSAI N°2 (en fonction)
-function calculateAgeCategories() {
+function calculAgeCategories() {
   // Initialisation des variables d'ages
   let under20 = 0;
   let between20and40 = 0;
@@ -34,7 +34,7 @@ function calculateAgeCategories() {
   // On retourne les résultats sous forme de trois variables
   return { under20, between20and40, over40 };
 }
-const result = calculateAgeCategories();
+const result = calculAgeCategories();
 document.write(
   `<p style="font-size: 20px;"> Il y a ${result.under20} personnes d'âge inférieur à 20 ans.</p><br>`
 );
