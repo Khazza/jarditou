@@ -209,7 +209,7 @@ form.addEventListener("submit", function (e) {
       // Création du message d'erreur
       errorMessage = document.createElement("div");
       errorMessage.innerHTML = "Veuillez choisir un sujet";
-
+      errorMessage.style.color = "red";
       // Insertion du message d'erreur après le champ
       sujet.insertAdjacentElement("afterend", errorMessage);
     }
